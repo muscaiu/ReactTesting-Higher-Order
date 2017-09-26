@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 export default function (ComposedComponent) {
+
+  //because of declaring contextTypes as static, 
+  //we can access Authentication.contextTypes
   class Authentication extends Component {
-    static contextTypes = {
+    static contextTypes ={
       router: React.PropTypes.object
     }
 
