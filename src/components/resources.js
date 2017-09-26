@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import requireAuth from './require_auth'
 
-export default ()=>{
-    return(
+const Resources = () => {
+    return (
         <div>
             Rcp Secret
             <ul>
@@ -11,6 +12,6 @@ export default ()=>{
             </ul>
         </div>
     )
-} 
+}
 
-
+export default requireAuth(Resources)
