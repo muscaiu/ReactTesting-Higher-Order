@@ -6,12 +6,23 @@ export default function (ComposedComponent) {
   //because of declaring contextTypes as static, 
   //we can access Authentication.contextTypes
   class Authentication extends Component {
-    static contextTypes ={
+    static contextTypes = {
       router: React.PropTypes.object
     }
 
+    componentWillMount() {
+      if (!this.props.authenticated) {
+        this.context.router.push('/')
+      }
+    }
+    //called when a component will be RErendered(new props)
+    componentWillUpdate(nextProps) {
+      if (!nextProps.authenticated) {
+        this.context.router.push('/')
+      }
+    }
+
     render() {
-      console.log(this.context)
       return <ComposedComponent {...this.props} />
     }
   }
