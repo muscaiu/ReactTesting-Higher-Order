@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import requireAuth from './require_auth'
+// import requireAuth from './require_auth'
 
 const Resources = () => {
     return (
@@ -14,4 +14,6 @@ const Resources = () => {
     )
 }
 
-export default requireAuth(Resources)
+export default Resources
+
+// export default requireAuth(Resources)
